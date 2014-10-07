@@ -1,0 +1,66 @@
+import java.awt.Color;
+import java.util.*;
+public class Level {
+	
+	//returns the new number as level increases
+	public static int newnum(int level){
+		int x = 0;
+		int number = (int) (Math.random()* Math.pow(10, (double)(level + 3)));
+		return number;
+	}
+	
+	public static void changebkgd(int level){
+		switch (level){
+		case 0: Zen.setColor(Color.black);
+				break;
+		
+		case 1: Zen.setColor(Color.black);
+				break;
+		case 2: Zen.setColor(Color.darkGray);
+				break;
+		case 3: Zen.setColor(Color.gray);
+				break;
+		case 4: Zen.setColor(Color.lightGray);
+				break;
+		case 5: Zen.setColor(Color.blue);
+				break;
+		case 6: Zen.setColor(Color.white);
+				break;
+		case 7: Zen.setColor(Color.yellow);
+				break;
+		case 8: Zen.setColor(Color.orange);
+				break;
+		case 9: Zen.setColor(Color.red);
+				break;
+		case 10: Zen.setColor(Color.pink);
+				break;
+			
+		}
+	}
+	public static void numrow(){
+		
+		
+		Zen.drawText("1" , 0, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("2" , 60, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("3" , 120, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("4" , 180, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("5" , 240, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("6" , 300, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("7" , 360, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("8" , 420, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("9" , 480, Zen.getZenHeight()/2 + 100);
+		Zen.drawText("0" , 540, Zen.getZenHeight()/2 + 100);
+	}
+	
+	public static void shrinkletter(int level){
+		Zen.setFont("Helvetica-" + (64-level));
+	}
+	
+	public static int newspeed(int score){
+		int result;
+		result = 20 - (score/5); 
+		if (result <= 3) return 3;
+		else return result;
+	}
+
+}
